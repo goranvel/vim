@@ -73,12 +73,10 @@ endfunction
 
 " maps f2 key with compiling a c program
 map <F2>	: call Compile("gcc")
-" map <S-F2>	: call Compile("gcc -Wall")
-map <C-F2>	: call Compile("gcc -Wall -g", "valgrind")
+map <S-F2>	: call Compile("gcc -Wall -g", "valgrind")
 
 " maps f3 key with compiling a c++ program
 map <F3>	: call Compile("g++")
-" map <S-F3>	: call Compile("g++ -Wall")
 map <S-F3>	: call Compile("g++ -Wall -g", "valgrind")
 
 
