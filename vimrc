@@ -88,7 +88,8 @@ map <S-F3>	: call Compile("g++ -Wall -g", "valgrind")
 map <F4> :! sh %
 
 " maps f5 key with mysql
-map <F5> :! mysql -u goran < %
+
+" map <F5> :! mysql  < %
 
 " maps f6 key with python3
 map <F6> :! python3 %
