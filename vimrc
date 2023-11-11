@@ -54,20 +54,19 @@ function Compile(compiler, ...)
 	let l:lineLen = 50
 	let l:printLine = "'=\\%.0s' {1.."	. l:lineLen .	"}" 
 	let l:wholeLine = "'=\\%.0s' {1..66}"
-	let l:command = "! printf		'\\n" .  g:start	. "'" .
-	\		"	&& printf	'" . g:comp			. "'" . 
-	\		"	&& printf	" . l:printLine	. " && echo ".
-	\		"	&& printf	" . l:wholeLine . " && echo " .
-	\		"	&& printf	'" . g:end			. "' && echo" .
-	\		"	&& " . a:compiler . " % " .
-	\		"	&& printf	'" . g:exec		. "'".
-	\		"	&& printf	 " . l:printLine .
-	\		"	&& printf	'" . g:end		. "'" .
-	\		"	&& echo && ./a.out && " . l:valgrind ." rm a.out && echo " .
-	\		"	&& printf	'" . g:done		. "'".
-	\		"	&& printf	 " . l:printLine .
-	\		"	&& printf	'" . g:end		. "\\n' ".
-	\		"	&& [ -f *.o ] && rm *.o || echo -n"
+	let l:command = "! printf		'\\n" .  g:start	. "'" . \
+			"	&& printf	'" . g:comp			. "'" .  \
+			"	&& printf	" . l:printLine	. " && echo ". \
+			"	&& printf	" . l:wholeLine . " && echo " . \
+			"	&& printf	'" . g:end			. "' && echo" . \
+			"	&& " . a:compiler . " % " . \
+			"	&& printf	'" . g:exec		. "'". \
+			"	&& printf	 " . l:printLine . \
+			"	&& printf	'" . g:end		. "'" . \
+			"	&& echo && ./a.out && " . l:valgrind ." rm a.out && echo " . \
+			"	&& printf	'" . g:done		. "'". \
+			"	&& printf	 " . l:printLine . \
+			"	&& printf	'" . g:end		. "\\n' " \
 	execute l:command
 endfunction
 
