@@ -44,7 +44,7 @@ function Compile(compiler, ...)
 	let l:valgrind="echo -n '' && "
 	if exists('a:1')
 		if (a:1==#"valgrind")
-			let l:valgrind="echo && echo && valgrind ./a.out && "
+			let l:valgrind="echo && echo && valgrind --leak-check=yes --track-origins=yes --show-leak-kinds=all -v ./a.out && "
 		else
 			echo "something went wrong"
 			return
@@ -77,8 +77,7 @@ map <S-F2>	: call Compile("gcc -Wall -g", "valgrind")
 
 " maps f3 key with compiling a c++ program
 map <F3>	: call Compile("g++")
-map <S-F3>	: call Compile("g++ -Wall -g", "valgrind")
-
+map <S-F3>	: call Compile("g++ -Wall -Wextra -g", "valgrind")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other plugins
