@@ -83,14 +83,16 @@ map <S-F3>	: call Compile("g++ -Wall -Wextra -g", "valgrind")
 " Other plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" maps f4 key with shell
-map <F4> :! sh %
+" maps F4 key with shell
+map <F4> :! bash %
 
-" maps f5 key with mysql
+" maps F5 key with mysql
+" map <F5> :! mysql < %
 
-" map <F5> :! mysql  < %
-
-" maps f6 key with python3
+" maps F6 key with python3
 map <F6> :! python3 %
-" map FLTK addition
-map <F7> :call FLTKCompile() 
+
+" maps F7 to make
+map <F7>	:! make
+map <S-F7>	:! make debug
+" call Compile("g++ -Wall -g -lncurses -ltinfo")
